@@ -578,6 +578,55 @@
     }
     .discount-cta:hover { background: var(--accent-dark); }
 
+    /* ── PORTFOLIO GRID ── */
+    #portfolio { background: var(--white); }
+    .portfolio-group { margin-top: 44px; }
+    .portfolio-group-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.82rem;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .portfolio-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      background: var(--navy);
+    }
+    .portfolio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+    .portfolio-card:hover img { transform: scale(1.05); }
+    .portfolio-card .p-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.9) 0%, transparent 100%);
+      padding: 28px 12px 10px;
+      color: rgba(255,255,255,0.92);
+      font-size: 0.82rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .portfolio-card:hover .p-caption { opacity: 1; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
       .ba-pair { grid-template-columns: 1fr; }
@@ -628,7 +677,8 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Our Work</a></li>
+      <li><a href="#gallery">Before &amp; After</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -838,6 +888,57 @@
         </div>
       </div>
 
+      <!-- Deck Replacement -->
+      <div>
+        <p class="gallery-group-label">Deck Replacement — Rotted Wood to New Lumber</p>
+        <div class="ba-pair">
+          <div class="ba-card" onclick="openLightbox('images/o (2).jpg')">
+            <img src="images/o (2).jpg" alt="Old rotted backyard deck before replacement" loading="lazy" />
+            <span class="ba-label before">Before</span>
+            <div class="ba-caption">Old rotted deck — unsafe and past its life</div>
+          </div>
+          <div class="ba-card" onclick="openLightbox('images/o (13).jpg')">
+            <img src="images/o (13).jpg" alt="Brand new deck built from fresh lumber" loading="lazy" />
+            <span class="ba-label after">After</span>
+            <div class="ba-caption">Completely rebuilt — fresh lumber, solid construction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kitchen Remodel -->
+      <div>
+        <p class="gallery-group-label">Kitchen Remodel — Full Cabinet &amp; Backsplash Transformation</p>
+        <div class="ba-pair">
+          <div class="ba-card" onclick="openLightbox('images/o (21).jpg')">
+            <img src="images/o (21).jpg" alt="Kitchen before remodel — dated dark cherry cabinets" loading="lazy" />
+            <span class="ba-label before">Before</span>
+            <div class="ba-caption">Dated dark cherry cabinets, plain walls</div>
+          </div>
+          <div class="ba-card" onclick="openLightbox('images/o (9).jpg')">
+            <img src="images/o (9).jpg" alt="Kitchen after — painted blue cabinets, glass tile backsplash, LED lighting" loading="lazy" />
+            <span class="ba-label after">After</span>
+            <div class="ba-caption">Painted cabinets, glass tile backsplash, LED lighting</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Bath Tub -->
+      <div>
+        <p class="gallery-group-label">Master Bath — Jetted Tub Demo &amp; New Soaking Tub Install</p>
+        <div class="ba-pair">
+          <div class="ba-card" onclick="openLightbox('images/o (4).jpg')">
+            <img src="images/o (4).jpg" alt="Jetted tub demolition — plumbing exposed, marble surround removed" loading="lazy" />
+            <span class="ba-label before">Demo</span>
+            <div class="ba-caption">Old jetted tub removed, plumbing exposed for new install</div>
+          </div>
+          <div class="ba-card" onclick="openLightbox('images/o (11).jpg')">
+            <img src="images/o (11).jpg" alt="New soaking tub installed — subway tile surround, wood-look floor" loading="lazy" />
+            <span class="ba-label after">After</span>
+            <div class="ba-caption">New soaking tub, subway tile surround, fresh flooring</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -847,6 +948,120 @@
   <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
   <img src="" id="lightboxImg" alt="" />
 </div>
+
+<!-- PORTFOLIO GRID -->
+<section id="portfolio">
+  <div class="section-inner">
+    <p class="section-label">Photo Portfolio</p>
+    <h2 class="section-title">More Real Work</h2>
+    <p class="section-sub">A closer look at the variety of jobs Scott and his crew tackle every week.</p>
+
+    <!-- Kitchens & Drywall -->
+    <div class="portfolio-group">
+      <p class="portfolio-group-title">Kitchens &amp; Drywall</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card" onclick="openLightbox('images/o.jpg')">
+          <img src="images/o.jpg" alt="Renovation collage — painting and kitchen remodel" loading="lazy" />
+          <div class="p-caption">Before &amp; After — Renovation overview</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (6).jpg')">
+          <img src="images/o (6).jpg" alt="Kitchen after — white and gray cabinets with blue LED under-cabinet lighting" loading="lazy" />
+          <div class="p-caption">Kitchen — white cabinets, blue LED lighting</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (22).jpg')">
+          <img src="images/o (22).jpg" alt="Kitchen island being drywalled before tile" loading="lazy" />
+          <div class="p-caption">Kitchen island — drywall in progress before tile</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (19).jpg')">
+          <img src="images/o (19).jpg" alt="White shaker kitchen cabinets being installed" loading="lazy" />
+          <div class="p-caption">Cabinet installation in progress</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (23).jpg')">
+          <img src="images/o (23).jpg" alt="Glass tile backsplash with green LED accent lighting" loading="lazy" />
+          <div class="p-caption">Glass tile backsplash with LED accent lighting</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bathrooms & Fixtures -->
+    <div class="portfolio-group">
+      <p class="portfolio-group-title">Bathrooms &amp; Fixtures</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card" onclick="openLightbox('images/o (1).jpg')">
+          <img src="images/o (1).jpg" alt="Double vanity — gray shaker cabinets, black granite, chrome fixtures" loading="lazy" />
+          <div class="p-caption">Double vanity — gray shaker cabinets, black granite</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (5).jpg')">
+          <img src="images/o (5).jpg" alt="Bathroom — new vanity light bar installed, white storage cabinet" loading="lazy" />
+          <div class="p-caption">New vanity light bar &amp; cabinet installed</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (10).jpg')">
+          <img src="images/o (10).jpg" alt="Bathroom vanity — warm wood cabinet, gold granite, vessel bowl sink" loading="lazy" />
+          <div class="p-caption">Custom vanity — vessel sink, gold granite, wood cabinet</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (14).jpg')">
+          <img src="images/o (14).jpg" alt="Clean shower and tub surround — fresh gray textured wall" loading="lazy" />
+          <div class="p-caption">Shower &amp; tub surround — clean gray texture</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (25).jpg')">
+          <img src="images/o (25).jpg" alt="Vessel bowl sink on black granite top with dark antique wood vanity" loading="lazy" />
+          <div class="p-caption">Vessel bowl sink — antique wood vanity, black granite</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decks, Carpentry & Railings -->
+    <div class="portfolio-group">
+      <p class="portfolio-group-title">Decks, Carpentry &amp; Railings</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card" onclick="openLightbox('images/o (7).jpg')">
+          <img src="images/o (7).jpg" alt="Painted balcony deck — gray planks, white spindle railing" loading="lazy" />
+          <div class="p-caption">Balcony deck — painted gray planks, white spindle railing</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (15).jpg')">
+          <img src="images/o (15).jpg" alt="Scott Floyd on ladder building a pergola patio cover" loading="lazy" />
+          <div class="p-caption">Scott on the job — pergola / patio cover build</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (17).jpg')">
+          <img src="images/o (17).jpg" alt="New cedar privacy fence with gate and black decorative hinges" loading="lazy" />
+          <div class="p-caption">New cedar privacy fence with gate</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (24).jpg')">
+          <img src="images/o (24).jpg" alt="Black iron stair railing on hardwood stairs with marble accent wall" loading="lazy" />
+          <div class="p-caption">Black iron stair railing — hardwood stairs</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (20).jpg')">
+          <img src="images/o (20).jpg" alt="Glass and screen enclosed sunroom exterior view" loading="lazy" />
+          <div class="p-caption">Screened sunroom — aluminum frame enclosure</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exterior & Landscaping -->
+    <div class="portfolio-group">
+      <p class="portfolio-group-title">Exterior, Lighting &amp; Landscaping</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-card" onclick="openLightbox('images/o (3).jpg')">
+          <img src="images/o (3).jpg" alt="Paver driveway and walkway with palm tree and gravel landscaping" loading="lazy" />
+          <div class="p-caption">Paver driveway &amp; walkway with landscaping</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (8).jpg')">
+          <img src="images/o (8).jpg" alt="Painted exterior staircase and paver area with palm tree" loading="lazy" />
+          <div class="p-caption">Exterior stairs painted — curb appeal upgrade</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (12).jpg')">
+          <img src="images/o (12).jpg" alt="Landscaping — red mulch garden beds with curved brick walkway and path lights" loading="lazy" />
+          <div class="p-caption">Landscaping — mulch beds, curved walkway, path lights</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/o (16).jpg')">
+          <img src="images/o (16).jpg" alt="Hallway with new recessed lighting installed" loading="lazy" />
+          <div class="p-caption">Recessed lighting installed — clean hallway</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- VIDEO SECTION -->
 <section id="video">
