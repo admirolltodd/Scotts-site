@@ -7,22 +7,21 @@
   <title>Floyd's Finishing Touch LLC | Valparaiso, FL</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="images/logo.jpg" />
-  <link rel="apple-touch-icon" href="images/logo.jpg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="business.business" />
   <meta property="og:title" content="Floyd's Finishing Touch LLC | Valparaiso, FL" />
   <meta property="og:description" content="Veteran-owned, licensed & insured handyman in Okaloosa & Walton County, FL. Painting, drywall, popcorn removal, pressure washing, carpentry, decks & more. Free estimates — call or text (725) 710-5841." />
-  <!-- NOTE: once your IONOS domain is connected, change these two to the full https URL (e.g. https://yourdomain.com/ and https://yourdomain.com/images/logo.jpg) for best results when links are shared. -->
-  <meta property="og:image" content="images/logo.jpg" />
-  <meta property="og:url" content="/" />
+  <meta property="og:image" content="https://floydsfinishingtouch.org/images/IMG_20260626_144411.jpg" />
+  <meta property="og:url" content="https://floydsfinishingtouch.org/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Floyd's Finishing Touch LLC | Valparaiso, FL" />
   <meta name="twitter:description" content="Veteran-owned, licensed & insured handyman in Okaloosa & Walton County, FL. Free estimates — call or text (725) 710-5841." />
-  <meta name="twitter:image" content="images/logo.jpg" />
+  <meta name="twitter:image" content="https://floydsfinishingtouch.org/images/IMG_20260626_144411.jpg" />
 
   <!-- LocalBusiness structured data (helps Google show you in local search) -->
   <script type="application/ld+json">
@@ -495,12 +494,25 @@
       font-family: inherit;
     }
     .form-submit:hover { background: var(--accent-dark); }
-    /* Netlify success page redirect — or show inline if JS enabled */
+    .form-submit:disabled { opacity: 0.7; cursor: default; }
+    /* Inline success message shown after AJAX submit (no redirect) */
     .form-success {
       display: none;
       background: #ecfdf5;
       border: 1px solid #6ee7b7;
       color: #065f46;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-weight: 600;
+      margin-top: 14px;
+      font-size: 0.93rem;
+    }
+    /* Inline error message shown if the submit request fails */
+    .form-error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
       border-radius: 8px;
       padding: 14px 18px;
       font-weight: 600;
@@ -725,7 +737,7 @@
 <header>
   <nav>
     <a href="#" class="logo-wrap">
-      <img src="images/logo.jpg" alt="Floyd's Finishing Touch LLC" class="logo-img" />
+      <img width="200" height="200" src="images/logo.jpg" alt="Floyd's Finishing Touch LLC" class="logo-img" />
     </a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -914,12 +926,12 @@
         <p class="gallery-group-label">Bathroom — Tub Surround, Trim &amp; Handicap Rails</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/bath-before.jpg')">
-            <img src="images/bath-before.jpg" alt="Bathroom before — bare walls, no rails" loading="lazy" />
+            <img width="1536" height="2048" src="images/bath-before.jpg" alt="Bathroom before — bare walls, no rails" loading="lazy" />
             <span class="ba-label before">Before</span>
             <div class="ba-caption">Bare walls, unfinished surround</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/bath-after.jpg')">
-            <img src="images/bath-after.jpg" alt="Bathroom after — clean trim, handicap rails installed" loading="lazy" />
+            <img width="2048" height="1536" src="images/bath-after.jpg" alt="Bathroom after — clean trim, handicap rails installed" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">Clean trim, grab rails installed, finished &amp; polished</div>
           </div>
@@ -931,12 +943,12 @@
         <p class="gallery-group-label">Custom Pantry — Full Built-In Shelving System</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/pantry-before.jpg')">
-            <img src="images/pantry-before.jpg" alt="Pantry during build — framing in progress" loading="lazy" />
+            <img width="1536" height="2048" src="images/pantry-before.jpg" alt="Pantry during build — framing in progress" loading="lazy" />
             <span class="ba-label before">During Build</span>
             <div class="ba-caption">Framing in progress</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/pantry-after.jpg')">
-            <img src="images/pantry-after.jpg" alt="Pantry after — beautiful custom built-in shelving complete" loading="lazy" />
+            <img width="1536" height="2048" src="images/pantry-after.jpg" alt="Pantry after — beautiful custom built-in shelving complete" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">Floor-to-ceiling custom pantry — complete</div>
           </div>
@@ -948,12 +960,12 @@
         <p class="gallery-group-label">Deck Replacement — Rotted Wood to New Lumber</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/o (2).jpg')">
-            <img src="images/o (2).jpg" alt="Old rotted backyard deck before replacement" loading="lazy" />
+            <img width="1000" height="474" src="images/o (2).jpg" alt="Old rotted backyard deck before replacement" loading="lazy" />
             <span class="ba-label before">Before</span>
             <div class="ba-caption">Old rotted deck — unsafe and past its life</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/o (13).jpg')">
-            <img src="images/o (13).jpg" alt="Brand new deck built from fresh lumber" loading="lazy" />
+            <img width="474" height="1000" src="images/o (13).jpg" alt="Brand new deck built from fresh lumber" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">Completely rebuilt — fresh lumber, solid construction</div>
           </div>
@@ -965,12 +977,12 @@
         <p class="gallery-group-label">Kitchen Remodel — Full Cabinet &amp; Backsplash Transformation</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/o (21).jpg')">
-            <img src="images/o (21).jpg" alt="Kitchen before remodel — dated dark cherry cabinets" loading="lazy" />
+            <img width="716" height="716" src="images/o (21).jpg" alt="Kitchen before remodel — dated dark cherry cabinets" loading="lazy" />
             <span class="ba-label before">Before</span>
             <div class="ba-caption">Dated dark cherry cabinets, plain walls</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/o (9).jpg')">
-            <img src="images/o (9).jpg" alt="Kitchen after — painted blue cabinets, glass tile backsplash, LED lighting" loading="lazy" />
+            <img width="1000" height="1000" src="images/o (9).jpg" alt="Kitchen after — painted blue cabinets, glass tile backsplash, LED lighting" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">Painted cabinets, glass tile backsplash, LED lighting</div>
           </div>
@@ -982,12 +994,12 @@
         <p class="gallery-group-label">Master Bath — Jetted Tub Demo &amp; New Soaking Tub Install</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/o (4).jpg')">
-            <img src="images/o (4).jpg" alt="Jetted tub demolition — plumbing exposed, marble surround removed" loading="lazy" />
+            <img width="474" height="1000" src="images/o (4).jpg" alt="Jetted tub demolition — plumbing exposed, marble surround removed" loading="lazy" />
             <span class="ba-label before">Demo</span>
             <div class="ba-caption">Old jetted tub removed, plumbing exposed for new install</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/o (11).jpg')">
-            <img src="images/o (11).jpg" alt="New soaking tub installed — subway tile surround, wood-look floor" loading="lazy" />
+            <img width="474" height="1000" src="images/o (11).jpg" alt="New soaking tub installed — subway tile surround, wood-look floor" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">New soaking tub, subway tile surround, fresh flooring</div>
           </div>
@@ -999,12 +1011,12 @@
         <p class="gallery-group-label">Front Entry — Custom-Built &amp; Painted Porch Railing</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/IMG_20260626_144407.jpg')">
-            <img src="images/IMG_20260626_144407.jpg" alt="Freshly built pressure-treated porch railing, unpainted" loading="lazy" />
+            <img width="1200" height="1600" src="images/IMG_20260626_144407.jpg" alt="Freshly built pressure-treated porch railing, unpainted" loading="lazy" />
             <span class="ba-label before">Freshly Built</span>
             <div class="ba-caption">New pressure-treated rail framed around the steps</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/IMG_20260626_144411.jpg')">
-            <img src="images/IMG_20260626_144411.jpg" alt="Finished porch railing painted bright white" loading="lazy" />
+            <img width="1600" height="1200" src="images/IMG_20260626_144411.jpg" alt="Finished porch railing painted bright white" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">Primed, painted &amp; finished — safe, solid, sharp</div>
           </div>
@@ -1016,12 +1028,12 @@
         <p class="gallery-group-label">Screened Porch — Full Rebuild: New Floor, Wainscot &amp; Trim</p>
         <div class="ba-pair">
           <div class="ba-card" onclick="openLightbox('images/IMG_20260626_144416.jpg')">
-            <img src="images/IMG_20260626_144416.jpg" alt="Screened porch mid-rebuild — new deck boards and plywood wainscot going in" loading="lazy" />
+            <img width="1200" height="1600" src="images/IMG_20260626_144416.jpg" alt="Screened porch mid-rebuild — new deck boards and plywood wainscot going in" loading="lazy" />
             <span class="ba-label before">During Build</span>
             <div class="ba-caption">New deck boards &amp; wainscot going in</div>
           </div>
           <div class="ba-card" onclick="openLightbox('images/IMG_20260626_144432.jpg')">
-            <img src="images/IMG_20260626_144432.jpg" alt="Finished screened porch — new flooring, trim and shutters complete" loading="lazy" />
+            <img width="1600" height="1200" src="images/IMG_20260626_144432.jpg" alt="Finished screened porch — new flooring, trim and shutters complete" loading="lazy" />
             <span class="ba-label after">After</span>
             <div class="ba-caption">Fresh floor, new trim &amp; custom shutters — done right</div>
           </div>
@@ -1050,23 +1062,23 @@
       <p class="portfolio-group-title">Kitchens &amp; Drywall</p>
       <div class="portfolio-grid">
         <div class="portfolio-card" onclick="openLightbox('images/o.jpg')">
-          <img src="images/o.jpg" alt="Renovation collage — painting and kitchen remodel" loading="lazy" />
+          <img width="1000" height="1000" src="images/o.jpg" alt="Renovation collage — painting and kitchen remodel" loading="lazy" />
           <div class="p-caption">Before &amp; After — Renovation overview</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (6).jpg')">
-          <img src="images/o (6).jpg" alt="Kitchen after — white and gray cabinets with blue LED under-cabinet lighting" loading="lazy" />
+          <img width="576" height="1000" src="images/o (6).jpg" alt="Kitchen after — white and gray cabinets with blue LED under-cabinet lighting" loading="lazy" />
           <div class="p-caption">Kitchen — white cabinets, blue LED lighting</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (22).jpg')">
-          <img src="images/o (22).jpg" alt="Kitchen island being drywalled before tile" loading="lazy" />
+          <img width="1000" height="474" src="images/o (22).jpg" alt="Kitchen island being drywalled before tile" loading="lazy" />
           <div class="p-caption">Kitchen island — drywall in progress before tile</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (19).jpg')">
-          <img src="images/o (19).jpg" alt="White shaker kitchen cabinets being installed" loading="lazy" />
+          <img width="474" height="1000" src="images/o (19).jpg" alt="White shaker kitchen cabinets being installed" loading="lazy" />
           <div class="p-caption">Cabinet installation in progress</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (23).jpg')">
-          <img src="images/o (23).jpg" alt="Glass tile backsplash with green LED accent lighting" loading="lazy" />
+          <img width="750" height="1000" src="images/o (23).jpg" alt="Glass tile backsplash with green LED accent lighting" loading="lazy" />
           <div class="p-caption">Glass tile backsplash with LED accent lighting</div>
         </div>
       </div>
@@ -1077,23 +1089,23 @@
       <p class="portfolio-group-title">Bathrooms &amp; Fixtures</p>
       <div class="portfolio-grid">
         <div class="portfolio-card" onclick="openLightbox('images/o (1).jpg')">
-          <img src="images/o (1).jpg" alt="Double vanity — gray shaker cabinets, black granite, chrome fixtures" loading="lazy" />
+          <img width="750" height="1000" src="images/o (1).jpg" alt="Double vanity — gray shaker cabinets, black granite, chrome fixtures" loading="lazy" />
           <div class="p-caption">Double vanity — gray shaker cabinets, black granite</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (5).jpg')">
-          <img src="images/o (5).jpg" alt="Bathroom — new vanity light bar installed, white storage cabinet" loading="lazy" />
+          <img width="750" height="1000" src="images/o (5).jpg" alt="Bathroom — new vanity light bar installed, white storage cabinet" loading="lazy" />
           <div class="p-caption">New vanity light bar &amp; cabinet installed</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (10).jpg')">
-          <img src="images/o (10).jpg" alt="Bathroom vanity — warm wood cabinet, gold granite, vessel bowl sink" loading="lazy" />
+          <img width="474" height="1000" src="images/o (10).jpg" alt="Bathroom vanity — warm wood cabinet, gold granite, vessel bowl sink" loading="lazy" />
           <div class="p-caption">Custom vanity — vessel sink, gold granite, wood cabinet</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (14).jpg')">
-          <img src="images/o (14).jpg" alt="Clean shower and tub surround — fresh gray textured wall" loading="lazy" />
+          <img width="750" height="1000" src="images/o (14).jpg" alt="Clean shower and tub surround — fresh gray textured wall" loading="lazy" />
           <div class="p-caption">Shower &amp; tub surround — clean gray texture</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (25).jpg')">
-          <img src="images/o (25).jpg" alt="Vessel bowl sink on black granite top with dark antique wood vanity" loading="lazy" />
+          <img width="750" height="1000" src="images/o (25).jpg" alt="Vessel bowl sink on black granite top with dark antique wood vanity" loading="lazy" />
           <div class="p-caption">Vessel bowl sink — antique wood vanity, black granite</div>
         </div>
       </div>
@@ -1104,43 +1116,43 @@
       <p class="portfolio-group-title">Decks, Carpentry &amp; Railings</p>
       <div class="portfolio-grid">
         <div class="portfolio-card" onclick="openLightbox('images/o (7).jpg')">
-          <img src="images/o (7).jpg" alt="Painted balcony deck — gray planks, white spindle railing" loading="lazy" />
+          <img width="750" height="1000" src="images/o (7).jpg" alt="Painted balcony deck — gray planks, white spindle railing" loading="lazy" />
           <div class="p-caption">Balcony deck — painted gray planks, white spindle railing</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (15).jpg')">
-          <img src="images/o (15).jpg" alt="Scott Floyd on ladder building a pergola patio cover" loading="lazy" />
+          <img width="750" height="1000" src="images/o (15).jpg" alt="Scott Floyd on ladder building a pergola patio cover" loading="lazy" />
           <div class="p-caption">Scott on the job — pergola / patio cover build</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (17).jpg')">
-          <img src="images/o (17).jpg" alt="New cedar privacy fence with gate and black decorative hinges" loading="lazy" />
+          <img width="750" height="1000" src="images/o (17).jpg" alt="New cedar privacy fence with gate and black decorative hinges" loading="lazy" />
           <div class="p-caption">New cedar privacy fence with gate</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (24).jpg')">
-          <img src="images/o (24).jpg" alt="Black iron stair railing on hardwood stairs with marble accent wall" loading="lazy" />
+          <img width="474" height="1000" src="images/o (24).jpg" alt="Black iron stair railing on hardwood stairs with marble accent wall" loading="lazy" />
           <div class="p-caption">Black iron stair railing — hardwood stairs</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (20).jpg')">
-          <img src="images/o (20).jpg" alt="Glass and screen enclosed sunroom exterior view" loading="lazy" />
+          <img width="1000" height="750" src="images/o (20).jpg" alt="Glass and screen enclosed sunroom exterior view" loading="lazy" />
           <div class="p-caption">Screened sunroom — aluminum frame enclosure</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144414.jpg')">
-          <img src="images/IMG_20260626_144414.jpg" alt="Painting a freshly built porch railing white" loading="lazy" />
+          <img width="1200" height="1600" src="images/IMG_20260626_144414.jpg" alt="Painting a freshly built porch railing white" loading="lazy" />
           <div class="p-caption">On the job — hand-painting a new porch railing</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144408.jpg')">
-          <img src="images/IMG_20260626_144408.jpg" alt="Finished white porch railing on brick home" loading="lazy" />
+          <img width="1600" height="1200" src="images/IMG_20260626_144408.jpg" alt="Finished white porch railing on brick home" loading="lazy" />
           <div class="p-caption">Finished front-porch railing — clean white finish</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144423.jpg')">
-          <img src="images/IMG_20260626_144423.jpg" alt="Custom rustic barnwood shutters and window trim" loading="lazy" />
+          <img width="1200" height="1600" src="images/IMG_20260626_144423.jpg" alt="Custom rustic barnwood shutters and window trim" loading="lazy" />
           <div class="p-caption">Custom barnwood shutters &amp; window trim</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144431.jpg')">
-          <img src="images/IMG_20260626_144431.jpg" alt="Newly built porch steps and entry with house number" loading="lazy" />
+          <img width="1200" height="1600" src="images/IMG_20260626_144431.jpg" alt="Newly built porch steps and entry with house number" loading="lazy" />
           <div class="p-caption">New porch steps &amp; finished entry</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144424.jpg')">
-          <img src="images/IMG_20260626_144424.jpg" alt="Rebuilt screened porch interior with new floor and chair-rail trim" loading="lazy" />
+          <img width="1200" height="1600" src="images/IMG_20260626_144424.jpg" alt="Rebuilt screened porch interior with new floor and chair-rail trim" loading="lazy" />
           <div class="p-caption">Rebuilt screened porch — new floor &amp; trim</div>
         </div>
       </div>
@@ -1151,19 +1163,19 @@
       <p class="portfolio-group-title">Exterior, Lighting &amp; Landscaping</p>
       <div class="portfolio-grid">
         <div class="portfolio-card" onclick="openLightbox('images/o (3).jpg')">
-          <img src="images/o (3).jpg" alt="Paver driveway and walkway with palm tree and gravel landscaping" loading="lazy" />
+          <img width="750" height="1000" src="images/o (3).jpg" alt="Paver driveway and walkway with palm tree and gravel landscaping" loading="lazy" />
           <div class="p-caption">Paver driveway &amp; walkway with landscaping</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (8).jpg')">
-          <img src="images/o (8).jpg" alt="Painted exterior staircase and paver area with palm tree" loading="lazy" />
+          <img width="750" height="1000" src="images/o (8).jpg" alt="Painted exterior staircase and paver area with palm tree" loading="lazy" />
           <div class="p-caption">Exterior stairs painted — curb appeal upgrade</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (12).jpg')">
-          <img src="images/o (12).jpg" alt="Landscaping — red mulch garden beds with curved brick walkway and path lights" loading="lazy" />
+          <img width="474" height="1000" src="images/o (12).jpg" alt="Landscaping — red mulch garden beds with curved brick walkway and path lights" loading="lazy" />
           <div class="p-caption">Landscaping — mulch beds, curved walkway, path lights</div>
         </div>
         <div class="portfolio-card" onclick="openLightbox('images/o (16).jpg')">
-          <img src="images/o (16).jpg" alt="Hallway with new recessed lighting installed" loading="lazy" />
+          <img width="474" height="1000" src="images/o (16).jpg" alt="Hallway with new recessed lighting installed" loading="lazy" />
           <div class="p-caption">Recessed lighting installed — clean hallway</div>
         </div>
       </div>
@@ -1367,6 +1379,9 @@
       </div>
 
       <!-- NETLIFY FORM -->
+      <!-- TODO (Netlify dashboard, not code): turn on submission notifications at
+           Site settings > Forms > Form notifications (email to Scott and/or Slack).
+           Form delivery is a dashboard setting — the markup below is already correct. -->
       <div class="contact-form-box">
         <h3>Request a Quote</h3>
         <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="quoteForm">
@@ -1414,6 +1429,10 @@
           <div class="form-success" id="formSuccess">
             Got it! We'll be in touch shortly to set up your free estimate.
           </div>
+          <div class="form-error" id="formError">
+            Something went wrong sending your request. Please call or text us at
+            <a href="tel:+17257105841" style="color:inherit;font-weight:800;">(725) 710-5841</a>.
+          </div>
         </form>
       </div>
     </div>
@@ -1423,7 +1442,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <img src="images/logo.jpg" alt="Floyd's Finishing Touch LLC" class="footer-logo-img" />
+    <img width="200" height="200" src="images/logo.jpg" alt="Floyd's Finishing Touch LLC" class="footer-logo-img" />
     <div class="footer-text">
       <p>Valparaiso, FL &bull; Serving Okaloosa &amp; Walton County</p>
       <p><a href="tel:+17257105841">(725) 710-5841</a></p>
@@ -1461,21 +1480,47 @@
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Contact form (JS fallback for non-Netlify previews)
-  document.getElementById('quoteForm').addEventListener('submit', function(e) {
-    // Let Netlify handle real submission; this only shows success UI for dev
-    var name = document.getElementById('name').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var service = document.getElementById('service').value;
-    if (!name || !phone || !service) return; // browser validation handles it
+  // Contact form — submit to Netlify via fetch (AJAX) so the success message
+  // shows inline in production without a page redirect. Honeypot + all hidden
+  // fields are part of FormData and sent as-is.
+  (function() {
+    var form = document.getElementById('quoteForm');
+    var btn = document.getElementById('submitBtn');
+    var success = document.getElementById('formSuccess');
+    var error = document.getElementById('formError');
 
-    // On Netlify the page will redirect to a thank-you; locally show inline msg
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('submitBtn').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    }
-  });
+
+      // Let the browser surface its native validation for required fields.
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      error.style.display = 'none';
+      var originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      // Encode all fields (incl. form-name and the honeypot) for Netlify.
+      var data = new URLSearchParams(new FormData(form)).toString();
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data
+      })
+      .then(function(res) {
+        if (!res.ok) throw new Error('Bad response ' + res.status);
+        form.style.display = 'none';
+        success.style.display = 'block';
+      })
+      .catch(function() {
+        // Network or server error — re-enable and show a fallback message.
+        btn.disabled = false;
+        btn.textContent = originalText;
+        error.style.display = 'block';
+      });
+    });
+  })();
 </script>
 
 </body>

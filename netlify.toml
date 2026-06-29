@@ -7,11 +7,6 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/thank-you"
-  to = "/#contact"
-  status = 301
-
 [[headers]]
   for = "/*"
   [headers.values]
