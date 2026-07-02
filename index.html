@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Floyd's Finishing Touch LLC — Painting, drywall, popcorn removal, pressure washing, carpentry, window & door repairs, deck building & more. No job too small. Serving Okaloosa & Walton County, FL. Call (725) 710-5841." />
-  <title>Floyd's Finishing Touch LLC | Valparaiso, FL</title>
+  <meta name="description" content="Veteran-owned handyman serving Valparaiso, Niceville, Fort Walton Beach & Destin, FL. Painting, drywall, popcorn removal, pressure washing, decks, carpentry & repairs — no job too small. Free estimates: (725) 710-5841." />
+  <title>Handyman &amp; Home Repair in Valparaiso &amp; Niceville, FL | Floyd's Finishing Touch</title>
+  <link rel="canonical" href="https://floydsfinishingtouch.org/" />
+  <meta name="theme-color" content="#0b1120" />
+  <!-- Preload the hero image (it's the LCP element) -->
+  <link rel="preload" as="image" href="images/IMG_20260626_144411.jpg" fetchpriority="high" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
@@ -12,14 +16,15 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="business.business" />
-  <meta property="og:title" content="Floyd's Finishing Touch LLC | Valparaiso, FL" />
+  <meta property="og:site_name" content="Floyd's Finishing Touch LLC" />
+  <meta property="og:title" content="Handyman &amp; Home Repair in Valparaiso &amp; Niceville, FL | Floyd's Finishing Touch" />
   <meta property="og:description" content="Veteran-owned, licensed & insured handyman in Okaloosa & Walton County, FL. Painting, drywall, popcorn removal, pressure washing, carpentry, decks & more. Free estimates — call or text (725) 710-5841." />
   <meta property="og:image" content="https://floydsfinishingtouch.org/images/IMG_20260626_144411.jpg" />
   <meta property="og:url" content="https://floydsfinishingtouch.org/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Floyd's Finishing Touch LLC | Valparaiso, FL" />
+  <meta name="twitter:title" content="Handyman &amp; Home Repair in Valparaiso &amp; Niceville, FL | Floyd's Finishing Touch" />
   <meta name="twitter:description" content="Veteran-owned, licensed & insured handyman in Okaloosa & Walton County, FL. Free estimates — call or text (725) 710-5841." />
   <meta name="twitter:image" content="https://floydsfinishingtouch.org/images/IMG_20260626_144411.jpg" />
 
@@ -44,6 +49,24 @@
       "postalCode": "32580",
       "addressCountry": "US"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.5086,
+      "longitude": -86.5027
+    },
+    "knowsAbout": [
+      "Interior and exterior painting",
+      "Drywall installation, repair and texturing",
+      "Popcorn ceiling removal",
+      "Pressure washing",
+      "Deck building and repair",
+      "Custom carpentry and shelving",
+      "Staining and sealing",
+      "Window and door repairs",
+      "Handicap rail and grab bar installation",
+      "Light electrical and plumbing fixture replacement",
+      "Winterizing"
+    ],
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "Okaloosa County, FL" },
       { "@type": "AdministrativeArea", "name": "Walton County, FL" }
@@ -56,7 +79,8 @@
     },
     "sameAs": [
       "https://www.bbb.org/us/fl/valparaiso/profile/handyman/floyds-finishing-touch-llc-0683-90105893",
-      "https://nextdoor.com/pages/floyds-finishing-touch-llc-valparaiso-fl"
+      "https://nextdoor.com/pages/floyds-finishing-touch-llc-valparaiso-fl",
+      "https://www.yelp.com/biz/floyds-finishing-touch-valparaiso"
     ]
   }
   </script>
@@ -603,6 +627,38 @@
     }
     .btn-nextdoor:hover { background: #23a542; transform: translateY(-2px); box-shadow: 0 14px 34px rgba(31,147,57,0.5); }
 
+    /* ── FAQ ── */
+    #faq { background: var(--card); }
+    .faq-list {
+      max-width: 800px;
+      margin-top: 44px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .faq-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item[open] { border-color: rgba(240,127,45,0.5); background: var(--card); box-shadow: var(--shadow); }
+    .faq-item summary {
+      cursor: pointer;
+      padding: 18px 22px;
+      font-weight: 800; font-size: 0.98rem; color: var(--ink);
+      list-style: none;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      color: var(--accent); font-size: 1.4rem; font-weight: 900; line-height: 1;
+      flex-shrink: 0; transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-a { padding: 0 22px 20px; color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
+    .faq-a a { color: var(--accent-dark); font-weight: 700; }
+
     /* ── CONTACT ── */
     #contact { background: var(--paper); }
     .contact-grid {
@@ -817,7 +873,7 @@
   <div class="hero-inner">
     <div class="hero-badge">Okaloosa &amp; Walton County, FL</div>
     <h1>One call.<br /><span class="grad">Done right.</span></h1>
-    <p>From painting and pressure washing to carpentry, decks, and drywall — Scott handles it all, so you don't have to call five different people.</p>
+    <p>Veteran-owned handyman &amp; home repair serving Valparaiso, Niceville, Fort Walton Beach &amp; Destin. Painting, pressure washing, carpentry, decks, drywall — Scott handles it all, so you don't have to call five different people.</p>
     <div class="hero-btns">
       <a href="tel:+17257105841" class="btn-primary">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
@@ -1408,10 +1464,102 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="kicker reveal"><span class="num">06</span><span class="rule"></span><span class="label">Common Questions</span></div>
+    <h2 class="section-title reveal">Straight answers.</h2>
+    <p class="section-sub reveal">The things folks usually ask before hiring a handyman around here.</p>
+    <div class="faq-list">
+
+      <details class="faq-item reveal">
+        <summary>Are estimates really free?</summary>
+        <div class="faq-a">Yes — completely free, no strings. Call or text <a href="tel:+17257105841">(725) 710-5841</a>, tell us what you need, and Scott will take a look and give you a clear number up front. No pressure, no obligation.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>What areas do you serve?</summary>
+        <div class="faq-a">We're a local handyman service covering Okaloosa &amp; Walton County, Florida — Valparaiso, Niceville, Fort Walton Beach, Shalimar, Mary Esther, Destin, Santa Rosa Beach, and the surrounding areas.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>Are you licensed and insured?</summary>
+        <div class="faq-a">Yes. Floyd's Finishing Touch LLC is a licensed Florida business (Lic. #L25000352562), fully insured, and accredited by the Better Business Bureau of Northwest Florida.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>Do veterans and seniors really get a discount?</summary>
+        <div class="faq-a">Always. We're veteran-owned, and veterans and seniors receive a minimum 10% discount on all services — just mention it when you call.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>Is my job too small to bother with?</summary>
+        <div class="faq-a">No job is too small — that's the whole point of a handyman. A sticking door, a faucet swap, a light fixture, a drywall patch: if it needs fixing, it's worth a call.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>What hours are you available?</summary>
+        <div class="faq-a">8 AM to 8 PM, seven days a week. We work around your schedule — including flexible scheduling for larger jobs.</div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>What's the best way to reach you?</summary>
+        <div class="faq-a">Calling is best — <a href="tel:+17257105841">(725) 710-5841</a>. Texting works too. You can also use the quote form below or email <a href="mailto:floydsfinishingtouchllc@gmail.com">floydsfinishingtouchllc@gmail.com</a>.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ structured data (matches the visible questions above) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are estimates really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — completely free, no strings. Call or text (725) 710-5841, tell us what you need, and Scott will take a look and give you a clear number up front. No pressure, no obligation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We're a local handyman service covering Okaloosa & Walton County, Florida — Valparaiso, Niceville, Fort Walton Beach, Shalimar, Mary Esther, Destin, Santa Rosa Beach, and the surrounding areas." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Floyd's Finishing Touch LLC is a licensed Florida business (Lic. #L25000352562), fully insured, and accredited by the Better Business Bureau of Northwest Florida." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do veterans and seniors really get a discount?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Always. We're veteran-owned, and veterans and seniors receive a minimum 10% discount on all services — just mention it when you call." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my job too small to bother with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No job is too small — that's the whole point of a handyman. A sticking door, a faucet swap, a light fixture, a drywall patch: if it needs fixing, it's worth a call." }
+    },
+    {
+      "@type": "Question",
+      "name": "What hours are you available?",
+      "acceptedAnswer": { "@type": "Answer", "text": "8 AM to 8 PM, seven days a week. We work around your schedule — including flexible scheduling for larger jobs." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best way to reach you?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Calling is best — (725) 710-5841. Texting works too. You can also use the quote form on our website or email floydsfinishingtouchllc@gmail.com." }
+    }
+  ]
+}
+</script>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
-    <div class="kicker reveal"><span class="num">06</span><span class="rule"></span><span class="label">Get In Touch</span></div>
+    <div class="kicker reveal"><span class="num">07</span><span class="rule"></span><span class="label">Get In Touch</span></div>
     <h2 class="section-title reveal">Request a free estimate.</h2>
     <p class="section-sub reveal">Tell us about your project and we'll get back to you fast.</p>
     <div class="contact-grid">
