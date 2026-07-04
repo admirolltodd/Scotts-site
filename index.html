@@ -767,8 +767,9 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       color: var(--white);
       text-align: center;
-      padding: 15px; border-radius: 99px;
-      font-size: 1rem; font-weight: 800;
+      padding: 15px 10px; border-radius: 99px;
+      font-size: 0.98rem; font-weight: 800;
+      white-space: nowrap; overflow: hidden;
       text-decoration: none; z-index: 320;
       box-shadow: 0 12px 32px rgba(11,17,32,0.5);
     }
@@ -830,6 +831,7 @@
       .sticky-call { display: block; }
       body { padding-bottom: 74px; }
       .hero-inner { padding: 64px 20px 90px; }
+      .hero-badge { font-size: 0.66rem; letter-spacing: 0.1em; padding: 6px 13px; }
       .hero-chips .chip { flex: 1; min-width: 100px; padding: 10px 12px; }
       .cta-box { flex-direction: column; align-items: flex-start; }
       /* No hover on touch devices — keep portfolio captions visible */
@@ -1145,10 +1147,10 @@
             <span class="ba-label before">During Build</span>
             <div class="ba-caption">New deck boards &amp; wainscot going in</div>
           </div>
-          <div class="ba-card" onclick="openLightbox('images/IMG_20260626_144432.jpg')">
-            <img width="1600" height="1200" src="images/IMG_20260626_144432.jpg" alt="Finished screened porch — new flooring, trim and shutters complete" loading="lazy" />
+          <div class="ba-card" onclick="openLightbox('images/IMG_20260626_144424.jpg')">
+            <img width="1200" height="1600" src="images/IMG_20260626_144424.jpg" alt="Finished screened porch — new floor, wainscot and chair-rail trim complete" loading="lazy" />
             <span class="ba-label after">After</span>
-            <div class="ba-caption">Fresh floor, new trim &amp; custom shutters — done right</div>
+            <div class="ba-caption">Fresh floor, wainscot &amp; trim — done right</div>
           </div>
         </div>
       </div>
@@ -1221,6 +1223,14 @@
           <img width="750" height="1000" src="images/o (25).jpg" alt="Vessel bowl sink on black granite top with dark antique wood vanity" loading="lazy" />
           <div class="p-caption">Vessel bowl sink — antique wood vanity, black granite</div>
         </div>
+        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260704_111854.jpg')">
+          <img width="1200" height="1600" src="images/IMG_20260704_111854.jpg" alt="LED backlit vanity mirror installed on marble-look tile wall" loading="lazy" />
+          <div class="p-caption">LED backlit mirror — marble tile bath remodel</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260704_111850.jpg')">
+          <img width="1200" height="1600" src="images/IMG_20260704_111850.jpg" alt="Wood-look plank tile shower surround with new ceiling vent fan and light" loading="lazy" />
+          <div class="p-caption">Plank-tile shower surround &amp; new vent fan</div>
+        </div>
       </div>
     </div>
 
@@ -1264,9 +1274,9 @@
           <img width="1200" height="1600" src="images/IMG_20260626_144431.jpg" alt="Newly built porch steps and entry with house number" loading="lazy" />
           <div class="p-caption">New porch steps &amp; finished entry</div>
         </div>
-        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144424.jpg')">
-          <img width="1200" height="1600" src="images/IMG_20260626_144424.jpg" alt="Rebuilt screened porch interior with new floor and chair-rail trim" loading="lazy" />
-          <div class="p-caption">Rebuilt screened porch — new floor &amp; trim</div>
+        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260626_144432.jpg')">
+          <img width="1600" height="1200" src="images/IMG_20260626_144432.jpg" alt="Rebuilt screened porch — full view with new flooring and custom shutters" loading="lazy" />
+          <div class="p-caption">Rebuilt screened porch — full view</div>
         </div>
       </div>
     </div>
@@ -1290,6 +1300,18 @@
         <div class="portfolio-card" onclick="openLightbox('images/o (16).jpg')">
           <img width="474" height="1000" src="images/o (16).jpg" alt="Hallway with new recessed lighting installed" loading="lazy" />
           <div class="p-caption">Recessed lighting installed — clean hallway</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260704_111826.jpg')">
+          <img width="1200" height="1600" src="images/IMG_20260704_111826.jpg" alt="Freshly trimmed hedges lining a paver walkway at a beach house" loading="lazy" />
+          <div class="p-caption">Hedges squared &amp; walkway detailed — beach house</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260704_111836.jpg')">
+          <img width="1600" height="1200" src="images/IMG_20260704_111836.jpg" alt="Poolside privacy hedges trimmed level along wood fence" loading="lazy" />
+          <div class="p-caption">Poolside hedge trimming &amp; cleanup</div>
+        </div>
+        <div class="portfolio-card" onclick="openLightbox('images/IMG_20260704_111848.jpg')">
+          <img width="1200" height="1600" src="images/IMG_20260704_111848.jpg" alt="Trimmed hedge row along paver path leading to white gate" loading="lazy" />
+          <div class="p-caption">Hedge row shaped &amp; path cleaned to the gate</div>
         </div>
       </div>
     </div>
@@ -1675,7 +1697,7 @@
 </footer>
 
 <!-- STICKY CALL BAR (mobile only) -->
-<a href="tel:+17257105841" class="sticky-call">Call for a Free Quote &mdash; (725) 710-5841</a>
+<a href="tel:+17257105841" class="sticky-call">Free Quote &mdash; Call (725) 710-5841</a>
 
 <script>
   // Hamburger
