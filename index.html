@@ -204,10 +204,18 @@
       min-height: 92vh;
       display: flex; align-items: center;
       overflow: hidden;
+      background: var(--ink);
+    }
+    /* Parallax background layer — oversized so it can drift on scroll */
+    .hero-bg {
+      position: absolute; inset: -16% 0 -16% 0;
       background:
         linear-gradient(100deg, rgba(11,17,32,0.96) 0%, rgba(11,17,32,0.82) 42%, rgba(11,17,32,0.35) 100%),
         url("images/IMG_20260626_144411.jpg") center 62% / cover no-repeat;
+      will-change: transform;
+      z-index: 0;
     }
+    @media (prefers-reduced-motion: reduce) { .hero-bg { transform: none !important; } }
     .hero::after {
       content: ''; position: absolute; inset: auto 0 0 0; height: 140px;
       background: linear-gradient(to top, var(--ink), transparent);
@@ -401,6 +409,121 @@
     .svc-icon svg { color: var(--accent-2); }
     .service-card h3 { font-size: 1.06rem; font-weight: 800; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; }
     .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+
+    /* ── SCROLL-SCRUBBED BEFORE/AFTER WIPE ──
+       scroll-world technique: scroll position directly drives the reveal.
+       The wrap is tall; the stage pins full-screen while scroll scrubs
+       the wipe divider from left to right. No video, no libraries. */
+    .wipe-wrap { height: 260vh; position: relative; margin: 56px 0 8px; }
+    .wipe-stage {
+      position: sticky; top: 0; height: 100vh;
+      overflow: hidden;
+      border-radius: 0;
+    }
+    .wipe-stage img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .wipe-before-layer {
+      position: absolute; inset: 0;
+      clip-path: inset(0 calc(100% - var(--wipe, 50%)) 0 0);
+      will-change: clip-path;
+    }
+    .wipe-divider {
+      position: absolute; top: 0; bottom: 0;
+      left: var(--wipe, 50%);
+      width: 3px; margin-left: -1.5px;
+      background: linear-gradient(to bottom, transparent, var(--accent) 18%, var(--gold) 82%, transparent);
+      box-shadow: 0 0 24px rgba(240,127,45,0.65);
+      will-change: left;
+    }
+    .wipe-divider::after {
+      content: '↔';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 900;
+      box-shadow: 0 8px 24px rgba(11,17,32,0.5);
+    }
+    .wipe-tag {
+      position: absolute; top: 84px;
+      padding: 7px 18px; border-radius: 99px;
+      font-size: 0.8rem; font-weight: 900;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      backdrop-filter: blur(6px);
+      z-index: 2;
+    }
+    .wipe-tag-b { left: 20px; background: rgba(11,17,32,0.75); color: #cfd8e6; border: 1px solid rgba(255,255,255,0.25); }
+    .wipe-tag-a { right: 20px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: var(--white); box-shadow: 0 6px 18px rgba(240,127,45,0.5); }
+    .wipe-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 90px 24px 34px;
+      background: linear-gradient(to top, rgba(11,17,32,0.92), transparent);
+      text-align: center; z-index: 2;
+    }
+    .wipe-caption strong {
+      display: block; color: var(--white);
+      font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 900; letter-spacing: -0.02em;
+    }
+    .wipe-caption span { color: rgba(236,240,248,0.75); font-size: 0.95rem; }
+    .wipe-hint {
+      position: absolute; left: 50%; top: 20px;
+      transform: translateX(-50%);
+      background: rgba(11,17,32,0.75); backdrop-filter: blur(6px);
+      border: 1px solid var(--line-dark);
+      color: rgba(236,240,248,0.9);
+      padding: 8px 20px; border-radius: 99px;
+      font-size: 0.82rem; font-weight: 700;
+      z-index: 2;
+      transition: opacity 0.4s;
+    }
+    .wipe-hint.gone { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .wipe-wrap { height: auto; }
+      .wipe-stage { position: relative; height: 70vh; }
+    }
+
+    /* ── ROUTE RAIL (section progress, desktop) ──
+       scroll-world's route indicator, adapted to anchor dots */
+    .rail {
+      position: fixed; right: 22px; top: 50%;
+      transform: translateY(-50%);
+      display: none; flex-direction: column; gap: 14px;
+      z-index: 290;
+    }
+    @media (min-width: 1150px) { .rail { display: flex; } }
+    .rail a {
+      position: relative;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(120,135,160,0.45);
+      border: 1px solid rgba(120,135,160,0.35);
+      transition: background 0.25s, transform 0.25s, border-color 0.25s;
+    }
+    .rail a:hover { transform: scale(1.35); }
+    .rail a::before {
+      content: attr(data-label);
+      position: absolute; right: 22px; top: 50%;
+      transform: translateY(-50%);
+      background: var(--ink); color: var(--white);
+      font-size: 0.72rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 7px;
+      white-space: nowrap;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s;
+      border: 1px solid var(--line-dark);
+    }
+    .rail a:hover::before { opacity: 1; }
+    .rail a.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.35);
+      box-shadow: 0 0 12px rgba(240,127,45,0.7);
+    }
 
     /* ── BEFORE / AFTER (dark) ── */
     #gallery { background: var(--ink); }
@@ -854,6 +977,18 @@
 
 <div id="progress"></div>
 
+<!-- ROUTE RAIL (desktop section indicator) -->
+<nav class="rail" id="rail" aria-label="Page sections">
+  <a href="#home" data-label="Top" data-sec="home"></a>
+  <a href="#services" data-label="Services" data-sec="services"></a>
+  <a href="#gallery" data-label="Before &amp; After" data-sec="gallery"></a>
+  <a href="#portfolio" data-label="Portfolio" data-sec="portfolio"></a>
+  <a href="#about" data-label="About Scott" data-sec="about"></a>
+  <a href="#reviews" data-label="Reviews" data-sec="reviews"></a>
+  <a href="#faq" data-label="FAQ" data-sec="faq"></a>
+  <a href="#contact" data-label="Free Quote" data-sec="contact"></a>
+</nav>
+
 <!-- TOP BAR -->
 <div class="topbar">
   Free estimates — Call or text anytime: <a href="tel:+17257105841">(725) 710-5841</a>
@@ -882,7 +1017,8 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-badge">Okaloosa &amp; Walton County, FL</div>
     <h1>One call.<br /><span class="grad">Done right.</span></h1>
@@ -1044,6 +1180,24 @@
     <div class="kicker reveal"><span class="num">02</span><span class="rule"></span><span class="label">Real Work, Real Results</span></div>
     <h2 class="section-title reveal">See the difference.</h2>
     <p class="section-sub reveal">Every project gets the same attention to detail — whether it's a bathroom refresh or a full custom pantry build. Tap any photo to enlarge.</p>
+
+    <!-- Scroll-scrubbed transformation: your scroll drives the before/after wipe -->
+    <div class="wipe-wrap" id="wipeWrap" style="width:100vw;margin-left:calc(50% - 50vw);">
+      <div class="wipe-stage" role="img" aria-label="Before and after comparison of a custom pantry build — from bare framing to finished floor-to-ceiling built-in shelving">
+        <img width="1536" height="2048" src="images/pantry-after.jpg" alt="" loading="lazy" />
+        <div class="wipe-before-layer" id="wipeBefore">
+          <img width="1536" height="2048" src="images/pantry-before.jpg" alt="" loading="lazy" />
+        </div>
+        <div class="wipe-divider" id="wipeDivider" aria-hidden="true"></div>
+        <span class="wipe-tag wipe-tag-b">Before</span>
+        <span class="wipe-tag wipe-tag-a">After</span>
+        <div class="wipe-hint" id="wipeHint">Keep scrolling — watch it transform</div>
+        <div class="wipe-caption">
+          <strong>From bare framing to built-in pantry.</strong>
+          <span>Designed, built &amp; finished by Floyd's &mdash; scroll to sweep before &rarr; after</span>
+        </div>
+      </div>
+    </div>
 
     <div class="gallery-groups">
 
@@ -1752,6 +1906,75 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // Scroll-driven effects (scroll-world technique: scroll position IS the
+  // animation timeline). One passive rAF loop drives hero parallax + the
+  // before/after wipe scrub. Fully disabled under prefers-reduced-motion.
+  (function() {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var heroBg = document.getElementById('heroBg');
+    var wrap = document.getElementById('wipeWrap');
+    var stage = wrap ? wrap.querySelector('.wipe-stage') : null;
+    var hint = document.getElementById('wipeHint');
+
+    if (reduced) {
+      if (stage) stage.style.setProperty('--wipe', '50%');
+      if (hint) hint.textContent = 'Before (left) vs. after (right)';
+      return;
+    }
+
+    var ticking = false;
+    function frame() {
+      ticking = false;
+      var y = window.scrollY || 0;
+
+      // Hero parallax: background drifts slower than the page
+      if (heroBg && y < window.innerHeight * 1.4) {
+        heroBg.style.transform = 'translate3d(0,' + (y * 0.22).toFixed(1) + 'px,0)';
+      }
+
+      // Wipe scrub: progress through the tall wrap maps to divider position
+      if (wrap && stage) {
+        var r = wrap.getBoundingClientRect();
+        var total = r.height - window.innerHeight;
+        if (total > 0 && r.top < window.innerHeight && r.bottom > 0) {
+          var p = Math.min(1, Math.max(0, -r.top / total));
+          // Start on "before" (divider right), sweep left-edge of AFTER across
+          // as you scroll — the story ends on the finished work.
+          stage.style.setProperty('--wipe', (90 - p * 80).toFixed(2) + '%');
+          if (hint && p > 0.12) hint.classList.add('gone');
+        }
+      }
+    }
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    frame();
+  })();
+
+  // Route rail: highlight the section currently in view
+  (function() {
+    var rail = document.getElementById('rail');
+    if (!rail || !('IntersectionObserver' in window)) return;
+    var links = {};
+    rail.querySelectorAll('a').forEach(function(a) { links[a.getAttribute('data-sec')] = a; });
+    var current = null;
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          if (current) current.classList.remove('active');
+          current = links[e.target.id];
+          if (current) current.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    Object.keys(links).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
   })();
 
   // Lightbox
